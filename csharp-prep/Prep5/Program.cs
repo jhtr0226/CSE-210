@@ -62,7 +62,7 @@ class Program
     }
     static void DisplayResult(string capitalizedName, int getSquaredNumber)
     {
-        Console.WriteLine($"{capitalizedName}, the square of your number is: {getSquaredNumber}.");
+        Console.WriteLine($"{capitalizedName}, the square of your number is: {getSquaredNumber}."); //fixed form square to getSquaredNumber
     }
 
 }
