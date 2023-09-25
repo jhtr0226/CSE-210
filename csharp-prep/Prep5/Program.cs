@@ -31,7 +31,7 @@ class Program
         string getName = PromptUserName();
         int getNumber = PromptUserNumber();
         int getSquaredNumber = SquareNumber(getNumber);
-        DisplayResult(getName, getNumber);
+        DisplayResult(getName, getSquaredNumber);
     }
 
 
@@ -60,9 +60,9 @@ class Program
         int squared = number * number;
         return squared;
     }
-    static void DisplayResult(string capitalizedName, int squared)
+    static void DisplayResult(string capitalizedName, int getSquaredNumber)
     {
-        Console.WriteLine($"{capitalizedName}, the square of your number is: {squared}.");
+        Console.WriteLine($"{capitalizedName}, the square of your number is: {getSquaredNumber}.");
     }
 
 }
