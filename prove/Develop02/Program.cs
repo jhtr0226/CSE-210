@@ -60,8 +60,8 @@ class Program
 
                         onProcess._filename = folderFile;
 
-                        Console.WriteLine($"\n\nLOADING {loadedFile}.... 0%\n\nLOADING {loadedFile}.... 25%\n\nLOADING {loadedFile}.... 50%");
-                        Console.WriteLine($"\nLOADING {loadedFile}.... 75%\n\nLOADING {loadedFile}.... 99%\n{loadedFile} loaded successfully!");
+                        Console.WriteLine($"\n\nLOADING {loadedFile}.... 0%\nLOADING {loadedFile}.... 25%\nLOADING {loadedFile}.... 50%");
+                        Console.WriteLine($"\nLOADING {loadedFile}.... 75%\nLOADING {loadedFile}.... 99%\n{loadedFile} loaded successfully!");
 
                         onProcess.loading();
                         break;
@@ -88,7 +88,7 @@ class Program
                             }
                             else
                             {
-                                Console.WriteLine("Not a valid input");
+                                Console.WriteLine("\nNot a valid input!");
                                 looping = -1;
                             }
 
@@ -105,8 +105,8 @@ class Program
                 string file = Console.ReadLine();
                 string theWholePath = Path.Combine(folderPath, file);
 
-                Console.WriteLine($"\n\nSAVING {file}.... 0%\n\nSAVING {file}.... 25%\n\nSAVING {file}.... 50%");
-                Console.WriteLine($"\nSAVING {file}.... 75%\n\nSAVING {file}.... 99%\n{file} saved successfully!");
+                Console.WriteLine($"\n\nSAVING {file}.... 0%\nSAVING {file}.... 25%\nSAVING {file}.... 50%");
+                Console.WriteLine($"\nSAVING {file}.... 75%\nSAVING {file}.... 99%\n{file} saved successfully!");
 
                 onProcess._filename = theWholePath;
                 onProcess.saving();
@@ -121,7 +121,7 @@ class Program
                 string entriesDestructor = "5";
                 while (entriesDestructor == "5")
                 {
-                    Console.Write($"Are you sure you want to delete entry number {killingNumber}? It will be gone forever!(yes/no) ");
+                    Console.Write($"\nAre you sure you want to delete entry number {killingNumber}? It will be gone forever!(yes/no) ");
                     string finalDesicion = Console.ReadLine();
 
                     if (finalDesicion == "yes")
@@ -140,7 +140,7 @@ class Program
                     }
                     else
                     {
-                        Console.WriteLine("Please try a valid a input");
+                        Console.WriteLine("\nPlease try a valid a input");
                         entriesDestructor = "5";
                     }
                 }
