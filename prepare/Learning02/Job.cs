@@ -7,9 +7,22 @@ public class Job //crearting the "structure of a job
     public int _startingYear;
     public int _endingYear;
 
+
+
     public void Display()
     {
         // we display how the jobs are going to look like
         Console.WriteLine($"{_jobTitle} ({_company}) {_startingYear}-{_endingYear}");
     }
 }
+
+
+
+/* DateTime variable = DateTime.Now;
+    
+
+
+    public void Display()
+    {
+        // we display how the jobs are going to look like
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startingYear}-{_endingYear}");*/

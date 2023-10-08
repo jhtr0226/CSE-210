@@ -6,6 +6,8 @@ class Program
     {
         // first job and we add its information
         Job job1 = new Job();
+        /*Console.Write("company name? ");
+        job1._jobTitle = Console.ReadLine();*/
         job1._jobTitle = "Software Engineer";
         job1._company = "Microsfot";
         job1._startingYear = 2019;
