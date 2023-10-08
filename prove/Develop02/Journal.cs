@@ -62,7 +62,7 @@ public class Journal
         if (ripEntry >= 1 && ripEntry <= days.Count)
         {
             days.RemoveAt(ripEntry - 1);
-            Console.WriteLine($"\nDELETING entry #{ripEntry}.... 50%\n\nDELETING entry #{ripEntry}.... 99%\nEntry #{ripEntry} deleted successfully!");
+            Console.WriteLine($"\nDELETING entry #{ripEntry}.... 50%\nDELETING entry #{ripEntry}.... 99%\nEntry #{ripEntry} deleted successfully!");
 
         }
         else
