@@ -9,25 +9,19 @@ public class Journal
     public string _filename;
     public string _deletingNumber;
 
-    List<string> days = new List<string>();
+    public List<Entry> Entries = new List<Entry>(); //Now we use a "list" of the entry class
 
-    public void addingEntries(string entry)
+    public void addingEntries(Entry entry)
     {
-        days.Add(entry);
+        Entries.Add(entry);
     }
 
     public void displayingJournal()
     {
-        for (int numbersToDisplay = 0; numbersToDisplay < days.Count; numbersToDisplay++)
+        for (int numbersToDisplay = 0; numbersToDisplay < Entries.Count; numbersToDisplay++)
         {
-            string[] partes = days[numbersToDisplay].Split("|");
+            Console.WriteLine($"Entry #{numbersToDisplay + 1}.\nDate: {Entries[numbersToDisplay]._todayDate} - Prompt: {Entries[numbersToDisplay]._prompt}\n{Entries[numbersToDisplay]._answer}\n");
 
-            string inputDate = partes[0].Trim();
-            string inputPrompt = partes[1].Trim();
-            string inputAnswer = partes[2].Trim();
-
-            string displayer = $"Entry #{numbersToDisplay + 1}.\nDate: {inputDate} - Prompt: {inputPrompt}\n{inputAnswer}\n";
-            Console.WriteLine(displayer);
         }
     }
 
@@ -36,21 +30,29 @@ public class Journal
 
         using (StreamWriter outputFile = new StreamWriter(_filename, true))
         {
-            foreach (string newEntry in days)
+            foreach (Entry entry in Entries)
             {
-                outputFile.WriteLine(newEntry);
+                outputFile.WriteLine($"{entry._todayDate}|{entry._prompt}|{entry._answer}");
             }
         }
     }
     public void loading()
     {
+        Entries.Clear();
         string[] lines = System.IO.File.ReadAllLines(_filename);
 
-        days.Clear();
+
 
         foreach (string line in lines)
         {
-            days.Add(line);
+            string[] fields = line.Split("|");
+            Entry entry = new Entry();
+            {
+                entry._todayDate = fields[0].Trim();
+                entry._prompt = fields[1].Trim();
+                entry._answer = fields[2].Trim();
+            }
+            Entries.Add(entry);
         }
 
     }
@@ -59,9 +61,9 @@ public class Journal
     {
         int ripEntry = int.Parse(_deletingNumber);
 
-        if (ripEntry >= 1 && ripEntry <= days.Count)
+        if (ripEntry >= 1 && ripEntry <= Entries.Count)
         {
-            days.RemoveAt(ripEntry - 1);
+            Entries.RemoveAt(ripEntry - 1);
             Console.WriteLine($"\nDELETING entry #{ripEntry}.... 50%\nDELETING entry #{ripEntry}.... 99%\nEntry #{ripEntry} deleted successfully!");
 
         }

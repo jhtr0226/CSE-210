@@ -28,9 +28,9 @@ class Program
                 DateTime theCurrentTime = DateTime.Now;
                 infoEntered._todayDate = theCurrentTime.ToShortDateString();
 
-                string entry = $"{infoEntered._todayDate}|{infoEntered._prompt}|{infoEntered._answer}";
+                //We stopped sending strings and we pass all the "infoEntered objects"
 
-                onProcess.addingEntries(entry);
+                onProcess.addingEntries(infoEntered);
 
             }
 
