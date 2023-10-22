@@ -9,14 +9,10 @@ public class Scripture
     private Random _random = new Random();
 
     //setter
-    public Scripture(Reference reference, List<string> verseWords)
+    public Scripture(Reference reference, List<Word> words)
     {
         _reference = reference;
-
-        foreach (string wordText in verseWords)
-        {
-            _words.Add(new Word(wordText)); //adds to word's list
-        }
+        _words = words;
     }
 
 

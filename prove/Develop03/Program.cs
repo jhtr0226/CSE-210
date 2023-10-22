@@ -32,9 +32,9 @@ class Program
             //I learned that ? is like a condition (quick if) for a line, comes along with : for else lol
 
             List<string> verseWords = new List<string>(text.Split(' '));//separates the words
-
+            List<Word> words = verseWords.Select(wordText => new Word(wordText)).ToList(); // Creates list of words
             Reference referenceObj = new Reference(book, chapter, verseStart, verseEnd);
-            Scripture scripture = new Scripture(referenceObj, verseWords);
+            Scripture scripture = new Scripture(referenceObj, words);
             //new scripture object
 
             scriptures.Add(scripture); //adds scripture to the list of scriptures
