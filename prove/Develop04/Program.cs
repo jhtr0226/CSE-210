@@ -16,7 +16,7 @@ class Program
 
             if (choice == "1")
             {
-                Breath breath = new Breath(0, "Welcome to the ", activity.endOne(""), "loadingAnimation");
+                Breath breath = new Breath(0, "Welcome to the", activity.endOne(""), "loadingAnimation");
                 Console.WriteLine(breath.startActivity());
             }
             else if (choice == "2")
