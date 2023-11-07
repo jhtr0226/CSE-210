@@ -67,8 +67,7 @@ public class Reflection : Activity
         Console.WriteLine("Get ready...\n\n");
 
 
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddMilliseconds(time);
+
         System.Threading.Thread.Sleep(1000);
         Console.Write($"Consider the following prompt:\n---{_promptR}---");
         Console.Write("\n\nWhen You have something in mind, press enter to continue.");
@@ -76,6 +75,8 @@ public class Reflection : Activity
         Console.Write("\nNow ponder on each of the following questions as they realated to this experience.\nYou may begin in: ");
         animationTwo();
         Console.Clear();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddMilliseconds(time);
         while (DateTime.Now < endTime)
         {
             Console.Write($"> {questions()} ");
