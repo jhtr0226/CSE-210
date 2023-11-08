@@ -42,14 +42,14 @@ public class Listing : Activity
         Console.Clear();
         //part 2
         Console.WriteLine("Get ready...\n\n");
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddMilliseconds(time);
+
         System.Threading.Thread.Sleep(1000);
         Console.Write($"List as many responses you can to the following prompt:\n---{_prompt}---");
         Console.Write("\nYou may begin in: ");
         animationTwo();
         Console.WriteLine("\n");
-
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddMilliseconds(time);
         //part 3
         int counter = 0;
         string response;
