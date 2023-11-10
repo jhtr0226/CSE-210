@@ -38,6 +38,8 @@ class Program
                 continue;
             }
 
+            // Made the prompts be selected randomly and they won't repeat until all of them have appeared already
+
         }
     }
 }
